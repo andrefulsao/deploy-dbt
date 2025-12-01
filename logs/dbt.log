@@ -1,0 +1,35 @@
+[0m20:28:49.873573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE73EC31D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE74969820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE73EC61E0>]}
+
+
+============================== 20:28:49.910017 | bda2d451-f23c-49dd-a0df-8d2bb0e3513b ==============================
+[0m20:28:49.910017 [info ] [MainThread]: Running with dbt=1.10.15
+[0m20:28:49.912020 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'use_colors': 'True', 'printer_width': '80', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Andre\\.dbt', 'warn_error': 'None', 'log_path': 'logs', 'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'invocation_command': 'dbt init', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m20:29:01.230264 [error] [MainThread]: Encountered an error:
+
+[0m20:29:01.234265 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\dbt\task\init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\dbt\task\init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\Deploy-dbt\.venv\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:29:01.236265 [debug] [MainThread]: Command `dbt init` failed at 20:29:01.236265 after 11.54 seconds
+[0m20:29:01.237288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE73DC5F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE74145910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE72130CB0>]}
+[0m20:29:01.237288 [debug] [MainThread]: Flushing usage events
+[0m20:29:02.100754 [debug] [MainThread]: An error was encountered while trying to flush usage events
